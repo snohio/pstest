@@ -1,0 +1,28 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_infra
+  product_name: chef-ice
+  product_version: '19'
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: Windows2022
+    os_type: windows
+    driver:
+      box: gusztavvargadr/windows-server-2022-standard
+    transport:
+      name: winrm
+      elevated: true
+
+suites:
+  - name: default
+    run_list:
+      - recipe[pstest::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default

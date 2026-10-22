@@ -1,0 +1,9 @@
+name: pstest
+title: PowerShell script execution smoke test
+summary: Verifies the copied script and its successful execution result
+maintainer: Mike
+copyright: Mike
+license: All Rights Reserved
+version: 0.1.0
+supports:
+  - platform-family: windows
